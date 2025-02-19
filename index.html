@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>موقعي العصري</title>
+  <!-- استيراد خط من Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* إعادة تعيين الأنماط وتحديد الـ box-sizing */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    /* تعريف متغيرات الألوان بنمط جوجل */
+    :root {
+      --primary-color: #4285F4; /* اللون الأزرق لجوجل */
+      --secondary-color: #202124;
+      --light-color: #fff;
+    }
+    /* شريط التنقل */
+    header {
+      background: var(--secondary-color);
+      padding: 10px 20px;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--light-color);
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .navbar .logo img {
+      width: 50px;
+      margin-right: 10px;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+    .nav-links li {
+      margin-left: 20px;
+    }
+    .nav-links a {
+      color: var(--light-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+    /* قسم البطل (Hero Section) */
+    .hero {
+      /* استخدام صورة من جوجل كشعار كخلفية */
+      background: url('https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png') no-repeat center center/contain;
+      height: 80vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    /* طبقة شفافة لتفتيح الخلفية */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.7);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+    }
+    .btn {
+      background: var(--primary-color);
+      color: var(--light-color);
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #357ae8;
+    }
+    /* القسم الرئيسي للمحتوى */
+    .content-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+      background: var(--light-color);
+      margin: 20px auto;
+      max-width: 1200px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .text-content {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+    .text-content h2 {
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+    }
+    .ads-container {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+      text-align: center;
+    }
+    /* التذييل */
+    footer {
+      background: var(--secondary-color);
+      color: var(--light-color);
+      text-align: center;
+      padding: 20px;
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      margin-top: 10px;
+    }
+    .footer-links li {
+      margin: 0 10px;
+    }
+    .footer-links a {
+      color: var(--light-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+    /* استجابة التصميم */
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+      }
+      .nav-links li {
+        margin: 10px 0;
+      }
+      .content-section {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- شريط التنقل -->
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo">
+        <!-- صورة شعار جوجل -->
+        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo">
+        موقعي العصري
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#contact">اتصل بنا</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- قسم البطل -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>مرحبًا بكم في موقعي العصري</h1>
+      <p>تصميم حديث بلمسة إبداعية مستوحاة من جوجل.</p>
+      <a href="#content" class="btn">المزيد</a>
+    </div>
+  </section>
+
+  <!-- المحتوى الرئيسي -->
+  <main>
+    <section id="content" class="content-section">
+      <div class="text-content">
+        <h2>عن الموقع</h2>
+        <p>
+          يقدم الموقع تجربة عصرية تجمع بين التصميم الأنيق والتكنولوجيا الحديثة.
+          كما يدعم عرض إعلانات Google AdSense لزيادة الدخل.
+        </p>
+        <p>
+          نسعى دائمًا لتقديم محتوى ذو قيمة وواجهة مستخدم جذابة مستوحاة من أفضل تصاميم جوجل.
+        </p>
+      </div>
+      <div class="ads-container">
+        <!-- كود إعلان Google AdSense -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    </section>
+  </main>
+
+  <!-- التذييل -->
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 جميع الحقوق محفوظة.</p>
+      <ul class="footer-links">
+        <li><a href="#privacy">سياسة الخصوصية</a></li>
+        <li><a href="#terms">الشروط والأحكام</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // ملف جافاسكريبت بسيط للتفاعلية (اختياري)
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('مرحباً بك في الموقع العصري!');
+    });
+  </script>
+</body>
+</html>
